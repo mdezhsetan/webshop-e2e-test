@@ -1,4 +1,5 @@
 import { test as base } from '@playwright/test';
+import { CartPage } from '../pages/CartPage';
 import { LoginPage } from '../pages/LoginPage';
 import { ProductPage } from '../pages/ProductPage';
 import { SearchPage } from '../pages/SearchPage';
@@ -10,6 +11,7 @@ type Pages = {
   loginPage: LoginPage;
   searchPage: SearchPage;
   productPage: ProductPage;
+  cartPage: CartPage;
 };
 
 export const pomTest = base.extend<Pages>({
@@ -21,6 +23,9 @@ export const pomTest = base.extend<Pages>({
   },
   productPage: async ({ page }, use) => {
     await use(new ProductPage(page));
+  },
+  cartPage: async ({ page }, use) => {
+    await use(new CartPage(page));
   },
 });
 
