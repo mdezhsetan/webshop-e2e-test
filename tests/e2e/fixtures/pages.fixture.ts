@@ -1,6 +1,8 @@
 import { test as base } from '@playwright/test';
 import { CartPage } from '../pages/CartPage';
+import { CheckoutPage } from '../pages/CheckoutPage';
 import { LoginPage } from '../pages/LoginPage';
+import { OrderConfirmationPage } from '../pages/OrderConfirmationPage';
 import { ProductPage } from '../pages/ProductPage';
 import { SearchPage } from '../pages/SearchPage';
 
@@ -12,6 +14,8 @@ type Pages = {
   searchPage: SearchPage;
   productPage: ProductPage;
   cartPage: CartPage;
+  checkoutPage: CheckoutPage;
+  orderConfirmationPage: OrderConfirmationPage;
 };
 
 export const pomTest = base.extend<Pages>({
@@ -26,6 +30,12 @@ export const pomTest = base.extend<Pages>({
   },
   cartPage: async ({ page }, use) => {
     await use(new CartPage(page));
+  },
+  checkoutPage: async ({ page }, use) => {
+    await use(new CheckoutPage(page));
+  },
+  orderConfirmationPage: async ({ page }, use) => {
+    await use(new OrderConfirmationPage(page));
   },
 });
 
