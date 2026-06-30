@@ -13,9 +13,9 @@ jobs:
     timeout-minutes: 30
     env:
       CI: true
-      E2E_BASE_URL: ${{ secrets.E2E_BASE_URL }}
-      E2E_SHOP: ${{ secrets.E2E_SHOP }}
-      E2E_LOCALE: ${{ secrets.E2E_LOCALE }}
+      E2E_BASE_URL: ${{ vars.E2E_BASE_URL }}
+      E2E_SHOP: ${{ vars.E2E_SHOP }}
+      E2E_LOCALE: ${{ vars.E2E_LOCALE }}
       E2E_PLATFORM_USER: ${{ secrets.E2E_PLATFORM_USER }}
       E2E_PLATFORM_PASSWORD: ${{ secrets.E2E_PLATFORM_PASSWORD }}
       E2E_USERNAME: ${{ secrets.E2E_USERNAME }}
