@@ -1,6 +1,4 @@
 // Per-assertion timeout overrides for steps that are slower than the default
-// expect timeout in playwright.config.ts. Centralized here so the values have
-// one source of truth and a clear intent at each call site.
 export const TIMEOUTS = {
   // Content that loads asynchronously and can be slow on the demo: search
   // results swapping in from skeletons, the product buy block, checkout

@@ -29,8 +29,8 @@ export class CheckoutPage {
     await this.deliveryMethodSelect.selectOption({ label });
   }
 
-  // Submits the order. The transition to the confirmation page is owned and
-  // verified by OrderConfirmationPage, keeping this page focused on checkout.
+  // Submits the order; the confirmation-page transition is verified by
+  // OrderConfirmationPage.
   async submitOrder(): Promise<void> {
     await this.submitButton.click();
   }

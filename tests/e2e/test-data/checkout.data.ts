@@ -24,13 +24,9 @@ export function deliveryLabel(method: DeliveryMethod, locale: string): string {
   return label;
 }
 
-// The assignment asks to "select the invoice payment option", but this demo build
-// exposes no payment-method control anywhere: neither the checkout page nor the
-// order confirmation page renders a payment selector or a "Factuur" label
-// (verified by inspecting both pages' DOM). B2B demo accounts are invoiced by
-// default, so invoice payment is implicit and there is nothing to select.
-// Kept as documentation of the expected default and for a future build that
-// surfaces payment selection.
+// The assignment's "select invoice payment" step has no UI in this build: B2B
+// demo accounts are invoiced by default, so it is implicit and nothing renders a
+// payment selector. Kept as documentation of the expected default.
 export const paymentMethods = {
   invoice: 'Factuur',
 } as const;

@@ -34,10 +34,9 @@ test.describe('Full flow', { tag: ['@critical', '@checkout'] }, () => {
 
     await checkoutPage.expectLoaded();
     await checkoutPage.selectDeliveryMethod();
-    // The assignment's "select invoice payment" step has no UI in this build: the
-    // B2B account is invoiced by default and checkout exposes no payment
-    // control (see test-data/checkout.data.ts). The journey is therefore
-    // validated through to the order confirmation page.
+    // The assignment's "select invoice payment" step has no UI in this build
+    // (see test-data/checkout.data.ts), so the journey runs through to the
+    // order confirmation page.
     await checkoutPage.submitOrder();
 
     await orderConfirmationPage.expectOrderPlaced();
